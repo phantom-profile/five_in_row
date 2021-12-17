@@ -6,7 +6,6 @@ using static CsGlobals;
 
 public class TilemapClicker : MonoBehaviour
 {
-    public int GameNumber = 0;
     public TileBase TilesToSet1;
     public TileBase TilesToSet2;
     public TileBase TilesToSet3;
@@ -50,8 +49,25 @@ public class TilemapClicker : MonoBehaviour
                 (((float) bottom_limit <= clickCellPosition.y) & (clickCellPosition.y < (float) upper_limit)) &
                 ((leftBottomCameraLimit.x-1 <= clickCellPosition.x) & (clickCellPosition.x < rigthUpperCameraLimit.x)) & 
                 ((leftBottomCameraLimit.y-1 <= clickCellPosition.y) & (clickCellPosition.y < rigthUpperCameraLimit.y)))
-
-                map.SetTile(clickCellPosition, TilesToSet1);
+            {
+                switch (CsGlobals.gamerNumber)
+                {
+                    case 0:
+                        map.SetTile(clickCellPosition, TilesToSet1);
+                        CsGlobals.gamerNumber++;
+                        break;
+                    case 1:
+                        map.SetTile(clickCellPosition, TilesToSet2);
+                        CsGlobals.gamerNumber++;
+                        break;
+                    case 2:
+                        map.SetTile(clickCellPosition, TilesToSet3);
+                        CsGlobals.gamerNumber++;
+                        break;
+                }
+                if (CsGlobals.gamerNumber > 2) CsGlobals.gamerNumber = 0;
+                if (CsGlobals.gamerNumber < 0) CsGlobals.gamerNumber = 2;
+            }
         }
     }
 }
