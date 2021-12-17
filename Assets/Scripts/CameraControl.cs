@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using static CsGlobals;
 
 
 
@@ -9,15 +10,19 @@ public class CameraControl : MonoBehaviour {
     Vector3 camera_position = Vector3.zero;
     float z = 0.0f;
 
-    private float left_limit = -2.0f;
-    private float right_limit= 2.0f;
-    private float bottom_limit = -2.0f;
-    private float upper_limit = 2.0f;
+    private float left_limit;
+    private float right_limit;
+    private float bottom_limit;
+    private float upper_limit;
     
     
     // Use this for initialization
     void Start () {
         
+        left_limit   = (float) CsGlobals.left_limit;
+        right_limit  = (float) CsGlobals.right_limit;
+        bottom_limit = (float) CsGlobals.bottom_limit;
+        upper_limit  = (float) CsGlobals.upper_limit;
     }
     
     void Update(){
