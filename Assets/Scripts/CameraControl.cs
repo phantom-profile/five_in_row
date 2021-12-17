@@ -26,13 +26,13 @@ public class CameraControl : MonoBehaviour {
     }
     
     void Update(){
-        if(Input.GetMouseButtonDown(0)){
+        if(Input.GetMouseButtonDown(1)){
             hit_position = Input.mousePosition;
             camera_position = transform.position;
             
         }
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(1))
         {
             current_position = Input.mousePosition;
             LeftMouseDrag();

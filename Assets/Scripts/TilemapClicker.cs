@@ -34,7 +34,7 @@ public class TilemapClicker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonUp(0))
         {
             Vector3 clickWorldPosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
 
@@ -42,7 +42,16 @@ public class TilemapClicker : MonoBehaviour
 
             Debug.Log(clickCellPosition);
             
-            map.SetTile(clickCellPosition, TilesToSet1);
+            Vector3 leftBottomCameraLimit = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, Camera.main.nearClipPlane));   //Получаем вектор нижнего левого угла камеры
+            Vector3 rigthUpperCameraLimit = Camera.main.ViewportToWorldPoint(new Vector3(1f, 1f, Camera.main.nearClipPlane));   //Получаем верхний правый угол камеры
+
+            
+            if ((((float) left_limit <= clickCellPosition.x) & (clickCellPosition.x < (float) right_limit)) & 
+                (((float) bottom_limit <= clickCellPosition.y) & (clickCellPosition.y < (float) upper_limit)) &
+                ((leftBottomCameraLimit.x-1 <= clickCellPosition.x) & (clickCellPosition.x < rigthUpperCameraLimit.x)) & 
+                ((leftBottomCameraLimit.y-1 <= clickCellPosition.y) & (clickCellPosition.y < rigthUpperCameraLimit.y)))
+
+                map.SetTile(clickCellPosition, TilesToSet1);
         }
     }
 }
