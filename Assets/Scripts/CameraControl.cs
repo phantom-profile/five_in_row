@@ -10,19 +10,13 @@ public class CameraControl : MonoBehaviour {
     Vector3 camera_position = Vector3.zero;
     float z = 0.0f;
 
-    private float left_limit;
-    private float right_limit;
-    private float bottom_limit;
-    private float upper_limit;
-    
+    private Vector3 leftBottomTilemapLimit;
+    private Vector3 rigthUpperTilemapLimit;
     
     // Use this for initialization
     void Start () {
-        
-        left_limit   = (float) CsGlobals.left_limit;
-        right_limit  = (float) CsGlobals.right_limit;
-        bottom_limit = (float) CsGlobals.bottom_limit;
-        upper_limit  = (float) CsGlobals.upper_limit;
+        leftBottomTilemapLimit = new Vector3((float) CsGlobals.leftLimit, (float) CsGlobals.bottomLimit, 0);
+        rigthUpperTilemapLimit = new Vector3((float) CsGlobals.rightLimit, (float) CsGlobals.upperLimit, 0);
     }
     
     void Update(){
@@ -39,8 +33,8 @@ public class CameraControl : MonoBehaviour {
         }
         
         transform.position = new Vector3
-            (Mathf.Clamp(transform.position.x, left_limit, right_limit),
-             Mathf.Clamp(transform.position.y, bottom_limit, upper_limit),
+            (Mathf.Clamp(transform.position.x, leftBottomTilemapLimit.x, rigthUpperTilemapLimit.x),
+             Mathf.Clamp(transform.position.y, leftBottomTilemapLimit.y, rigthUpperTilemapLimit.y),
              transform.position.z);
     }
     

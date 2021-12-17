@@ -3,17 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="55f8e028-adb2-40f4-9bfe-b245adb14d92" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Scripts.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Scripts.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CameraControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CameraControl.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CsGlobals.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CsGlobals.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TilemapClicker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TilemapClicker.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Library/ArtifactDB" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/ArtifactDB" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/00/0098b386b4279853afc517cc2625d153" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/2e/2e56fb14ab541e76652b5976807b5a0f" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/4d/4d4ffc13721bef07aa22e95bc38bd514" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/5a/5a735939d1ac00f7e438ad84b02f5912" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/9f/9fe747a52acc38491bc80cbc4c0abd02" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/a6/a682b9186f3548acca2ea1933fd4de0d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/b3/b39ec56f50603e01e730fba092f43fc1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/f3/f333228546d4ec03a7ced4e445ede6d8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/09/0904b91f15effbfe5e338723adb24b1d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/50/50a244953d724e86533bac26701e9dcb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/6c/6cc7de8a33ae1b983f4b38c43f5ecf6b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/7c/7c3740146e92ff209d94d55300f1cf04" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/ad/ad8e0a5118dacd2b8d91ad7e1fc8c27b" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Library/SourceAssetDB" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/SourceAssetDB" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Library/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
     </list>
@@ -24,6 +22,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/CameraControl.cs" root0="FORCE_HIGHLIGHTING" />
@@ -55,7 +61,8 @@
       <workItem from="1639737075495" duration="2629000" />
       <workItem from="1639739824292" duration="1187000" />
       <workItem from="1639741175264" duration="1414000" />
-      <workItem from="1639743248222" duration="868000" />
+      <workItem from="1639743248222" duration="1315000" />
+      <workItem from="1639747241784" duration="5395000" />
     </task>
     <servers />
   </component>

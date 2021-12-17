@@ -4,12 +4,13 @@
 
 public static class CsGlobals
 {
-    public static int gamerNumber = 0;
+    public static byte gamerNumber = 1;
     
-    public static int left_limit   = -100;
-    public static int right_limit  =  100;
-    public static int bottom_limit = -100;
-    public static int upper_limit  =  100;
+    public static int leftLimit   = -100;
+    public static int rightLimit  =  100;
+    public static int bottomLimit = -100;
+    public static int upperLimit  =  100;
 
+	public static byte[,] map = new byte[rightLimit-leftLimit, upperLimit-bottomLimit];
 
 }
