@@ -11,6 +11,16 @@ public static class CsGlobals
     public static int bottomLimit = -100;
     public static int upperLimit  =  100;
 
-	public static byte[,] map = new byte[rightLimit-leftLimit, upperLimit-bottomLimit];
+	public static int GetXSize()
+	{
+		return rightLimit - leftLimit;
+	}
+
+	public static int GetYSize()
+	{
+		return upperLimit - bottomLimit;
+	}
+
+	public static byte[,] map = new byte[GetXSize(), GetYSize()];
 
 }

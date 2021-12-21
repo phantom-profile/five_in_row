@@ -3,36 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="55f8e028-adb2-40f4-9bfe-b245adb14d92" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Scripts.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Scripts.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CsGlobals.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CsGlobals.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TilemapClicker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TilemapClicker.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Library/ArtifactDB" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/ArtifactDB" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/10/1086c85a5df5410384bd28a55cfdcaee" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/11/11f18b636117e88df0dc4c57714239b5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/13/13f42b6efe0fdac62b6b3824aaf66eae" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/15/15a65c058fbf9111084164de88dbf979" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/1b/1bbe2b8230a26206dbd70dc760be0dd5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/20/2072dac364e6b0b53ed23c51a637a9b7" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/21/21ceaac6ca02b770ffb9490cb6205b97" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/2a/2af9b417b0b6bbb3b1cacced27981311" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/32/327847d13115f2a311d1621238db3296" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/3a/3a664c13de053f547cda6898c829b21c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/47/479126ef74e61811c1a38e0712efce3a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/47/47e2e80ac1cd90106e3277e03398e9af" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/4b/4b1e9386c4571141680d0740648ff510" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/53/531b740ae5e003e777ec14e3ba058c3c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/59/591e987c57135a7a95669789d959465a" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/6c/6cda41e0cb956c41902c2bf4f76778f5" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/6e/6e7f797b2e701f15219ed40c244cdd44" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/6f/6f3af9099b735532f545923befa78ab4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/81/810bdacb75c767fce54ecc2d7cbb39b6" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/b3/b363c6dfd6535d0ae9455b98ff93fcba" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/c7/c7481740d2fd3eada2f2acaacb4a768c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/c8/c8e7a836a81e3d235a7391a902c9d86e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/d0/d0ff505ad3b724ac3dd09ee56a1ba2cb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/e3/e39c67910229478886552aa4e953496d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/e9/e96860fcfa9bbd3095baa3c9b58a9679" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/ef/ef97e49daf0dfe07e55eebc192e1af6c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/CurrentLayout-default.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/CurrentLayout-default.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/ScriptAssemblies/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/ScriptAssemblies/Assembly-CSharp.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/ScriptAssemblies/Assembly-CSharp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/ScriptAssemblies/Assembly-CSharp.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Library/SourceAssetDB" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/SourceAssetDB" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/StateCache/Hierarchy/c87438-mainStage.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/StateCache/Hierarchy/c87438-mainStage.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Library/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,6 +30,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/CameraControl.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TilemapClicker.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/Downloads/AIChoser.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CsGlobals.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="22NAkaTC6vMaoyBjL8sKE6e4dk2" />
@@ -85,6 +62,8 @@
       <workItem from="1639747241784" duration="5395000" />
       <workItem from="1639752892759" duration="507000" />
       <workItem from="1639769759334" duration="81000" />
+      <workItem from="1640116031759" duration="2062000" />
+      <workItem from="1640118222626" duration="7086000" />
     </task>
     <servers />
   </component>

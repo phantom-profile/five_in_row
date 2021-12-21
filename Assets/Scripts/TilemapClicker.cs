@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using static CsGlobals;
+//using AIChoser;
 
 public class TilemapClicker : MonoBehaviour
 {
@@ -29,7 +31,46 @@ public class TilemapClicker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonUp(0))
+        if (CsGlobals.gamerNumber == 3)
+        {
+            AIChooser AI = new AIChooser();
+            List<(int x, int y)> winMoves = AI.GetPossibleMoves();
+            
+            System.Random rnd = new System.Random();
+            (int x, int y) point = winMoves[rnd.Next(winMoves.Count)];
+            Vector3Int clickCellPosition = new Vector3Int(point.x + leftBottomTilemapLimit.x, 
+                point.y + leftBottomTilemapLimit.y, 0);
+                
+            switch (CsGlobals.gamerNumber)
+            {
+                case 1:
+                    map.SetTile(clickCellPosition, TilesToSet1);
+                    break;
+                case 2:
+                    map.SetTile(clickCellPosition, TilesToSet2);
+                    break;
+                case 3:
+                    map.SetTile(clickCellPosition, TilesToSet3);
+                    break;
+                default:
+                    return;
+            }
+
+            CsGlobals.map[clickCellPosition.x - leftBottomTilemapLimit.x,
+                clickCellPosition.y - leftBottomTilemapLimit.y] = CsGlobals.gamerNumber;
+                    
+            Debug.Log(CsGlobals.gamerNumber);
+            Debug.Log(clickCellPosition);
+            Debug.Log(new Vector3Int(point.x, point.y, 0));
+            if (isWin(clickCellPosition.x - leftBottomTilemapLimit.x, 
+                clickCellPosition.y - leftBottomTilemapLimit.y, CsGlobals.gamerNumber))
+                Debug.Log(CsGlobals.gamerNumber);
+                    
+            CsGlobals.gamerNumber++;
+            if (CsGlobals.gamerNumber > 3) CsGlobals.gamerNumber = 1;
+        }
+        
+        else if (Input.GetMouseButtonUp(0))
         {
             Vector3 clickWorldPosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
 
@@ -69,6 +110,9 @@ public class TilemapClicker : MonoBehaviour
                     
                     Debug.Log(CsGlobals.gamerNumber);
                     Debug.Log(clickCellPosition);
+                    Debug.Log(new Vector3Int(clickCellPosition.x - leftBottomTilemapLimit.x,
+                        clickCellPosition.y - leftBottomTilemapLimit.y, 0));
+
                     if (isWin(clickCellPosition.x - leftBottomTilemapLimit.x, 
                         clickCellPosition.y - leftBottomTilemapLimit.y, CsGlobals.gamerNumber))
                         Debug.Log(CsGlobals.gamerNumber);
