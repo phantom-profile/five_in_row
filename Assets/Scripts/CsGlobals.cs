@@ -5,6 +5,8 @@
 public static class CsGlobals
 {
     public static byte gamerNumber = 1;
+
+	public static bool FirstTile = true;
     
     public static int leftLimit   = -100;
     public static int rightLimit  =  100;
@@ -22,5 +24,7 @@ public static class CsGlobals
 	}
 
 	public static byte[,] map = new byte[GetXSize(), GetYSize()];
+
+	public static bool[] RealPlayers = new bool[] {true, true, true};
 
 }

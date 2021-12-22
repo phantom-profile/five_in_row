@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 using static CsGlobals;
 //using AIChoser;
@@ -24,6 +25,10 @@ public class TilemapClicker : MonoBehaviour
         map = GetComponent<Tilemap>();
         mainCamera = Camera.main;
 
+        Debug.Log(CsGlobals.RealPlayers[0].ToString());
+        Debug.Log(CsGlobals.RealPlayers[1].ToString());
+        Debug.Log(CsGlobals.RealPlayers[2].ToString());
+        
         leftBottomTilemapLimit = new Vector3Int(CsGlobals.leftLimit, CsGlobals.bottomLimit, 0);
         rigthUpperTilemapLimit = new Vector3Int(CsGlobals.rightLimit, CsGlobals.upperLimit, 0);
     }
@@ -31,16 +36,97 @@ public class TilemapClicker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (CsGlobals.gamerNumber == 3)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
+            SceneManager.LoadScene(0);
+            return;
+        }
+
+        if (CsGlobals.RealPlayers[CsGlobals.gamerNumber - 1])
+        {
+            if (Input.GetMouseButtonUp(0))
+            {
+                Vector3 clickWorldPosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+
+                Vector3Int clickCellPosition = map.WorldToCell(clickWorldPosition);
+
+                //Debug.Log(clickCellPosition);
+
+                Vector3 leftBottomCameraLimit =
+                    Camera.main.ViewportToWorldPoint(new Vector3(0, 0,
+                        Camera.main.nearClipPlane)); //Получаем вектор нижнего левого угла камеры
+                Vector3 rigthUpperCameraLimit =
+                    Camera.main.ViewportToWorldPoint(new Vector3(1f, 1f,
+                        Camera.main.nearClipPlane)); //Получаем верхний правый угол камеры
+
+
+                if (((leftBottomTilemapLimit.x <= clickCellPosition.x) &
+                     (clickCellPosition.x < rigthUpperTilemapLimit.x)) &
+                    ((leftBottomTilemapLimit.y <= clickCellPosition.y) &
+                     (clickCellPosition.y < rigthUpperTilemapLimit.y)) &
+                    ((leftBottomCameraLimit.x - 1 <= clickCellPosition.x) &
+                     (clickCellPosition.x < rigthUpperCameraLimit.x)) &
+                    ((leftBottomCameraLimit.y - 1 <= clickCellPosition.y) &
+                     (clickCellPosition.y < rigthUpperCameraLimit.y)))
+                {
+                    if (CsGlobals.map[clickCellPosition.x - leftBottomTilemapLimit.x,
+                        clickCellPosition.y - leftBottomTilemapLimit.y] == 0)
+                    {
+                        switch (CsGlobals.gamerNumber)
+                        {
+                            case 1:
+                                map.SetTile(clickCellPosition, TilesToSet1);
+                                break;
+                            case 2:
+                                map.SetTile(clickCellPosition, TilesToSet2);
+                                break;
+                            case 3:
+                                map.SetTile(clickCellPosition, TilesToSet3);
+                                break;
+                            default:
+                                return;
+                        }
+
+                        CsGlobals.map[clickCellPosition.x - leftBottomTilemapLimit.x,
+                            clickCellPosition.y - leftBottomTilemapLimit.y] = CsGlobals.gamerNumber;
+
+                        Debug.Log(CsGlobals.gamerNumber);
+                        Debug.Log(clickCellPosition);
+                        Debug.Log(new Vector3Int(clickCellPosition.x - leftBottomTilemapLimit.x,
+                            clickCellPosition.y - leftBottomTilemapLimit.y, 0));
+
+                        if (isWin(clickCellPosition.x - leftBottomTilemapLimit.x,
+                            clickCellPosition.y - leftBottomTilemapLimit.y, CsGlobals.gamerNumber))
+                        {
+                            SceneManager.LoadScene(2);
+                            return;
+                        }
+
+                        CsGlobals.gamerNumber++;
+                        if (CsGlobals.gamerNumber > 3) CsGlobals.gamerNumber = 1;
+                        //if (CsGlobals.gamerNumber < 1) CsGlobals.gamerNumber = 3;
+                    }
+                }
+            }
+        }
+        else
+        
+        {
+            //StartCoroutine(waiter());
+            
+            
             AIChooser AI = new AIChooser();
             List<(int x, int y)> winMoves = AI.GetPossibleMoves();
-            
+        
             System.Random rnd = new System.Random();
-            (int x, int y) point = winMoves[rnd.Next(winMoves.Count)];
+            (int x, int y) point;
+                if (winMoves.Count <= 0)
+                    point = (100, 100);
+                else
+                point = winMoves[rnd.Next(winMoves.Count)];
             Vector3Int clickCellPosition = new Vector3Int(point.x + leftBottomTilemapLimit.x, 
                 point.y + leftBottomTilemapLimit.y, 0);
-                
+            
             switch (CsGlobals.gamerNumber)
             {
                 case 1:
@@ -58,70 +144,32 @@ public class TilemapClicker : MonoBehaviour
 
             CsGlobals.map[clickCellPosition.x - leftBottomTilemapLimit.x,
                 clickCellPosition.y - leftBottomTilemapLimit.y] = CsGlobals.gamerNumber;
-                    
+                
             Debug.Log(CsGlobals.gamerNumber);
             Debug.Log(clickCellPosition);
             Debug.Log(new Vector3Int(point.x, point.y, 0));
-            if (isWin(clickCellPosition.x - leftBottomTilemapLimit.x, 
+            if (isWin(clickCellPosition.x - leftBottomTilemapLimit.x,
                 clickCellPosition.y - leftBottomTilemapLimit.y, CsGlobals.gamerNumber))
-                Debug.Log(CsGlobals.gamerNumber);
-                    
+            {
+                SceneManager.LoadScene(2);
+                return;
+            }
+
             CsGlobals.gamerNumber++;
             if (CsGlobals.gamerNumber > 3) CsGlobals.gamerNumber = 1;
         }
         
-        else if (Input.GetMouseButtonUp(0))
+    }
+    
+    IEnumerator waiter()
+    {
+        yield return new WaitForSeconds(5);
+ 
+        for (int i = 0; i < 1000; i++)
         {
-            Vector3 clickWorldPosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-
-            Vector3Int clickCellPosition = map.WorldToCell(clickWorldPosition);
-
-            //Debug.Log(clickCellPosition);
-            
-            Vector3 leftBottomCameraLimit = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, Camera.main.nearClipPlane));   //Получаем вектор нижнего левого угла камеры
-            Vector3 rigthUpperCameraLimit = Camera.main.ViewportToWorldPoint(new Vector3(1f, 1f, Camera.main.nearClipPlane));   //Получаем верхний правый угол камеры
-
-            
-            if (((leftBottomTilemapLimit.x  <= clickCellPosition.x) & (clickCellPosition.x < rigthUpperTilemapLimit.x)) & 
-                ((leftBottomTilemapLimit.y  <= clickCellPosition.y) & (clickCellPosition.y < rigthUpperTilemapLimit.y)) &
-                ((leftBottomCameraLimit.x-1 <= clickCellPosition.x) & (clickCellPosition.x < rigthUpperCameraLimit.x))  & 
-                ((leftBottomCameraLimit.y-1 <= clickCellPosition.y) & (clickCellPosition.y < rigthUpperCameraLimit.y)))
-            {
-                if (CsGlobals.map[clickCellPosition.x - leftBottomTilemapLimit.x,
-                    clickCellPosition.y - leftBottomTilemapLimit.y] == 0)
-                {
-                    switch (CsGlobals.gamerNumber)
-                    {
-                        case 1:
-                            map.SetTile(clickCellPosition, TilesToSet1);
-                            break;
-                        case 2:
-                            map.SetTile(clickCellPosition, TilesToSet2);
-                            break;
-                        case 3:
-                            map.SetTile(clickCellPosition, TilesToSet3);
-                            break;
-                        default:
-                            return;
-                    }
-
-                    CsGlobals.map[clickCellPosition.x - leftBottomTilemapLimit.x,
-                        clickCellPosition.y - leftBottomTilemapLimit.y] = CsGlobals.gamerNumber;
-                    
-                    Debug.Log(CsGlobals.gamerNumber);
-                    Debug.Log(clickCellPosition);
-                    Debug.Log(new Vector3Int(clickCellPosition.x - leftBottomTilemapLimit.x,
-                        clickCellPosition.y - leftBottomTilemapLimit.y, 0));
-
-                    if (isWin(clickCellPosition.x - leftBottomTilemapLimit.x, 
-                        clickCellPosition.y - leftBottomTilemapLimit.y, CsGlobals.gamerNumber))
-                        Debug.Log(CsGlobals.gamerNumber);
-                    
-                    CsGlobals.gamerNumber++;
-                    if (CsGlobals.gamerNumber > 3) CsGlobals.gamerNumber = 1;
-                    //if (CsGlobals.gamerNumber < 1) CsGlobals.gamerNumber = 3;
-                }
-            }
+            yield return new WaitForSeconds(0.05f);
+            // Move the object upward in world space 1 unit/second.
+            transform.Translate(Vector3.up * Time.deltaTime, Space.World);
         }
     }
 
@@ -146,10 +194,12 @@ public class TilemapClicker : MonoBehaviour
             }
 
             if (chipsNumberInRow >= 5)
+            {
                 return true;
+            }
         }
 
         return false;
     }
-    
+
 }

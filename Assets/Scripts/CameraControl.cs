@@ -20,7 +20,29 @@ public class CameraControl : MonoBehaviour {
     }
     
     void Update(){
-        if(Input.GetMouseButtonDown(1)){
+        
+		Vector3 direction = transform.position;
+		if (Input.GetKeyDown(KeyCode.W))
+        {
+            direction.y = direction.y + 1;
+        }
+		if (Input.GetKeyDown(KeyCode.A))
+        {
+            direction.y = direction.x - 1;
+        }
+		if (Input.GetKeyDown(KeyCode.S))
+        {
+            direction.y = direction.y - 1;
+        }
+		if (Input.GetKeyDown(KeyCode.D))
+        {
+            direction.y = direction.x + 1;
+        }
+
+
+
+
+		if(Input.GetMouseButtonDown(1)){
             hit_position = Input.mousePosition;
             camera_position = transform.position;
             
