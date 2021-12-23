@@ -24,7 +24,27 @@ public class MainMenu : MonoBehaviour
 		CsGlobals.gamerNumber = 1;
 		//CsGlobals.RealPlayers = new bool[] {true, true, true};         
 		CsGlobals.FirstTile = true;
+		
+		
     }
+    
+    public void Update()
+	{
+		if (CsGlobals.RealPlayers[0])
+        			Button1.GetComponent<Image>().sprite = PlayerSprite;
+        		else
+        			Button1.GetComponent<Image>().sprite = AISprite;
+        
+        		if (CsGlobals.RealPlayers[1])
+        			Button2.GetComponent<Image>().sprite = PlayerSprite;
+        		else
+        			Button2.GetComponent<Image>().sprite = AISprite;
+        
+        		if (CsGlobals.RealPlayers[2])
+        			Button3.GetComponent<Image>().sprite = PlayerSprite;
+        		else
+        			Button3.GetComponent<Image>().sprite = AISprite;
+	}
 
     // Update is called once per frame
     public void Exit()
@@ -40,7 +60,7 @@ public class MainMenu : MonoBehaviour
 			Button1.GetComponent<Image>().sprite = PlayerSprite;
 		else
 			Button1.GetComponent<Image>().sprite = AISprite;
-        Debug.Log(CsGlobals.RealPlayers[0].ToString());
+        //Debug.Log(CsGlobals.RealPlayers[0].ToString());
 
     }
 
@@ -52,7 +72,7 @@ public class MainMenu : MonoBehaviour
 			Button2.GetComponent<Image>().sprite = PlayerSprite;
 		else
 			Button2.GetComponent<Image>().sprite = AISprite;   
-        Debug.Log(CsGlobals.RealPlayers[1].ToString());
+        //Debug.Log(CsGlobals.RealPlayers[1].ToString());
           
     }
 
@@ -64,7 +84,7 @@ public class MainMenu : MonoBehaviour
 			Button3.GetComponent<Image>().sprite = PlayerSprite;
 		else
 			Button3.GetComponent<Image>().sprite = AISprite;      
-        Debug.Log(CsGlobals.RealPlayers[2].ToString());
+        //Debug.Log(CsGlobals.RealPlayers[2].ToString());
         
     }
 }
