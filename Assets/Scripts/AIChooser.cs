@@ -52,244 +52,209 @@ public class AIChooser
     public AIChooser()
     {
     }
+    
+		private bool CheckNeighbours(int x, int y)
+		{
+			//Debug.Log("CheckNeighbours 0");
+			
+			for (int deltaY = -2; deltaY <= 2; deltaY++)
+			{
+				int yDeltaY = y + deltaY;
 
-    private List<(int x, int y)> GetFutureMoves()
-    {
-        var fMoves = new List<(int x, int y)>();
+				if (yDeltaY < 0 || yDeltaY >= CsGlobals.GetYSize())
+				{
+					continue;
+				}
 
-        for (int y = 0; y < CsGlobals.GetYSize(); y++)
-        {
-            for (int x = 0; x < CsGlobals.GetXSize(); x++)
-            {
-                // If (x,y) already taken then just continue
-                if (CsGlobals.map[x, y] != (byte) Marker.Empty)
-                {
-                    continue;
-                }
+				for (int deltaX = -2; deltaX <= 2; deltaX++)
+				{
+					int xDeltaX = x + deltaX;
 
-                bool ok = false;
-                for (int deltaY = -1; deltaY < 2; deltaY++)
-                {
-                    int yDeltaY = y + deltaY;
+					if (xDeltaX < 0 || xDeltaX >= CsGlobals.GetXSize())
+					{
+						continue;
+					}
 
-                    if (yDeltaY < 0 || yDeltaY >= CsGlobals.GetYSize())
-                    {
-                        continue;
-                    }
+					if (CsGlobals.map[xDeltaX, yDeltaY] == (byte) Marker.Empty)
+					{
+						continue;
+					}
 
-                    for (int deltaX = -1; deltaX < 2; deltaX++)
-                    {
-                        int xDeltaX = x + deltaX;
+					return true;
+				}
+			}
 
-                        if (xDeltaX < 0 || xDeltaX >= CsGlobals.GetXSize())
-                        {
-                            continue;
-                        }
+			return false;
+		}
 
-                        if (CsGlobals.map[xDeltaX, yDeltaY] == (byte) Marker.Empty)
-                        {
-                            continue;
-                        }
+		private void setNewCost(int x, int y)
+		{
+			//int newCost = 0;
 
-                        fMoves.Add((x, y));
-                        ok = true;
+			if (!CheckNeighbours(x, y))
+			{
+				return;
+			}
+			//Debug.Log("setNewCost 0");
 
-                        break;
-                    }
+			// Reset cost for passed x and y
+			foreach (KeyValuePair<byte, int[,]> kvp in CsGlobals.Costs)
+			{
+				var costs = kvp.Value;
+				costs[x, y] = 0;
+			}
 
-                    if (ok)
-                    {
-                        break;
-                    }
-                }
-            }
-        }
+			(int x, int y)[] deltas = {(-1, 1), (0, 1), (1, 1), (1, 0)};
+			//Debug.Log("setNewCost 1");
 
-        return fMoves;
-    }
+			foreach (var dlt in deltas)
+			{
+				var s1 = "";
+				for (int i = -5; i <= 5; i++)
+				{
+					s1 += $"{CsGlobals.map[x + dlt.x * i, y + dlt.y * i]}";
+				}
+				//Debug.Log("setNewCost 2");
 
-    private void SetPlayers(byte playerNum)
-    {
-        switch (playerNum)
-        {
-            case 1:
-                _playersOrder = new Dictionary<byte, Marker>
-                {
-                    {1, Marker.First},
-                    {2, Marker.Second},
-                    {3, Marker.Third},
-                };
-                break;
-            case 2:
-                _playersOrder = new Dictionary<byte, Marker>
-                {
-                    {2, Marker.First},
-                    {3, Marker.Second},
-                    {1, Marker.Third},
-                };
-                break;
-            case 3:
-                _playersOrder = new Dictionary<byte, Marker>
-                {
-                    {3, Marker.First},
-                    {1, Marker.Second},
-                    {2, Marker.Third},
-                };
-                break;
-            default:
-                throw new Exception("Impossible player num (only 3 supported).");
-        }
-    }
+				for (int i = 1; i <= 3; i++)
+				{
+					var s = s1.Substring(0, 5) + i.ToString() + s1.Substring(6, 5);
 
-    private List<(int x, int y)> CalcRating(List<(int x, int y)> moves)
-    {
-        int winCosts = 0;
-        List<(int x, int y)> winMoves = new List<(int x, int y)>();
+					for (int j = 1; j <= 3; j++)
+					{
+						s = s.Replace(j.ToString(), i == j ? "x" : "#");
+					}
+					//Debug.Log("setNewCost 3");
+				
+					// FINISH IT!
 
-        foreach (var point in moves)
-        {
-            (int x, int y)[] deltas = {(-1, 1), (0, 1), (1, 1), (1, 0)};
-            int sumCost = 0;
+					int[] maxCost = new int[] {0, 0, 0};
+					//int maxCost2 = 0;
+					//int maxCost3 = 0;
+					var sReverse = s.Reverse().ToString();
 
-            // First diag /
-            foreach (var dlt in deltas)
-            {
-                var s1 = "";
-                for (int i = -5; i <= 5; i++)
-                {
-                    s1 += $"{CsGlobals.map[point.x + dlt.x * i, point.y + dlt.y * i]}";
-                }
+					for (int k = 0; k < _patterns.Length; k++)
+					{
+						int found = s.IndexOf(_patterns[k]);
+						if (found != -1)
+						{
+							maxCost[0] = (maxCost[0] > getMaxCost((byte) 1, (byte) i, k)) ? maxCost[0] : getMaxCost((byte) 1, (byte) i, k);
+							maxCost[1] = (maxCost[1] > getMaxCost((byte) 2, (byte) i, k)) ? maxCost[1] : getMaxCost((byte) 2, (byte) i, k);
+							maxCost[2] = (maxCost[2] > getMaxCost((byte) 3, (byte) i, k)) ? maxCost[2] : getMaxCost((byte) 3, (byte) i, k);
+						}
+						//Debug.Log("setNewCost 4");
 
-				//Debug.Log(s1);
+						found = sReverse.IndexOf(_patterns[k]);
+						if (found != -1)
+						{
+							maxCost[0] = (maxCost[0] > getMaxCost((byte) 1, (byte) i, k)) ? maxCost[0] : getMaxCost((byte) 1, (byte) i, k);
+							maxCost[1] = (maxCost[1] > getMaxCost((byte) 2, (byte) i, k)) ? maxCost[1] : getMaxCost((byte) 2, (byte) i, k);
+							maxCost[2] = (maxCost[2] > getMaxCost((byte) 3, (byte) i, k)) ? maxCost[2] : getMaxCost((byte) 3, (byte) i, k);
+						}
 
-                for (int i = 1; i <= 3; i++)
-                {
-                    var s = s1.Substring(0, 5) + i.ToString() + s1.Substring(6, 5);
+						foreach (KeyValuePair<byte, int[,]> kvp in CsGlobals.Costs)
+						{
+							var costs = kvp.Value;
+							var playerNum = kvp.Key;
+							costs[x, y] += maxCost[playerNum - 1];// + (System.DateTime.Now.Millisecond) % 30;
+						}
+					}
 
-                    for (int j = 1; j <= 3; j++)
-                    {
-                        s = s.Replace(j.ToString(), i == j ? "x" : "#");
-                    }
+					//CsGlobals.Costs[(byte) i][x, y] += maxCost;
+				}
+			}
+		}
 
-                    int maxCost = 0;
-                    var sReverse = s.Reverse().ToString();
+		private int getMaxCost(byte playerNumber, byte patternPlayerNumber, int pattern)
+		{
+			//Debug.Log("getMaxCost 0");
+			byte deltaNumber = (byte) (patternPlayerNumber - playerNumber);
+			while (deltaNumber < 1 || 3 < deltaNumber)
+			{
+				if (deltaNumber < 1)
+					deltaNumber += 3;
+				if (deltaNumber > 3)
+					deltaNumber -= 3;
+			}
+			//Debug.Log("getMaxCost 1");
+			
+			switch (deltaNumber)
+			{
+				case 1:
+					return _costs[(Marker.First, pattern + 1)];
+					break;
+				case 2:
+					return _costs[(Marker.Second, pattern + 1)];
+					break;
+				case 3:
+					return _costs[(Marker.Third, pattern + 1)];
+					break;
+				default:
+					throw new Exception("Impossible player num (only 3 supported).");
+			}
 
-                    for (int k = 0; k < _patterns.Length; k++)
-                    {
-                        int found = s.IndexOf(_patterns[k]);
-                        if (found != -1 &&
-                            maxCost < _costs[(_playersOrder[(byte) i], k+1)])
-                        {
-                            maxCost = _costs[(_playersOrder[(byte) i], k+1)];
-                        }
+			return -1;
+		}
 
-                        found = sReverse.IndexOf(_patterns[k]);
-                        if (found != -1 &&
-                            maxCost < _costs[(_playersOrder[(byte) i], k+1)])
-                        {
-                            maxCost = _costs[(_playersOrder[(byte) i], k+1)];
-                        }
-                    }
+
+		// Param: new move's x and y coords
+		public void UpdateCosts(int x, int y)
+		{
+			foreach (KeyValuePair<byte, int[,]> kvp in CsGlobals.Costs)
+			{
+				//Debug.Log("UpdateCosts 3");
+
+				var costs = kvp.Value;
+				costs[x, y] = -1;
+			}
+			
+			// foreach (var (playerNum, costs) in CsGlobals.Costs)
+			// {
+			//Debug.Log("UpdateCosts 0");
+			for (int deltaX = -5; deltaX <= 5; deltaX++)
+			{
+				//Debug.Log("UpdateCosts 1");
+
+				int xDeltaX = x + deltaX;
+				for (int deltaY = -5; deltaY <= 5; deltaY++)
+				{	
+
+					int yDeltaY = y + deltaY;
+					if (CsGlobals.map[xDeltaX, yDeltaY] != 0)
+					{
+						continue;
+					}
 					
-					//Debug.Log(s);
-					//Debug.Log(sReverse);
+					//Debug.Log("UpdateCosts 2");
 
-                    sumCost += maxCost;
-                }
-            }
+					setNewCost(xDeltaX, yDeltaY);
+				}
+			}
+			// }
+		}
 
-            if (sumCost == winCosts)
-            {
-                winMoves.Add(point);
-            }
-            else if (sumCost > winCosts)
-            {
-                winCosts = sumCost;
-				winMoves.Clear();
-                winMoves.Add(point);
-            }
-
-			//Debug.Log(sumCost);
-
-            // s1-4 lines like '01130201122'
-            // var s1 = ""; // first diag /
-            // var s2 = ""; // second diag \
-            // var s3 = ""; // horizontal line ––
-            // var s4 = ""; // vertical line |
-
-            // analyse string and set rating
-
-            // First diag /
-            // s1 += $"{CsGlobals.map[point.x - 5, point.y - 5]}";
-            // s1 += $"{CsGlobals.map[point.x - 4, point.y - 4]}";
-            // s1 += $"{CsGlobals.map[point.x - 3, point.y - 3]}";
-            // s1 += $"{CsGlobals.map[point.x - 2, point.y - 2]}";
-            // s1 += $"{CsGlobals.map[point.x - 1, point.y - 1]}";
-            // s1 += $"{CsGlobals.map[point.x, point.y]}";
-            // s1 += $"{CsGlobals.map[point.x + 1, point.y + 1]}";
-            // s1 += $"{CsGlobals.map[point.x + 2, point.y + 2]}";
-            // s1 += $"{CsGlobals.map[point.x + 3, point.y + 3]}";
-            // s1 += $"{CsGlobals.map[point.x + 4, point.y + 4]}";
-            // s1 += $"{CsGlobals.map[point.x + 5, point.y + 5]}";
-
-            // s1[5] = 1 | 2 | 3
-
-            // // Second diag \
-            // s2 += $"{CsGlobals.map[point.x - 5, point.y + 5]}";
-            // s2 += $"{CsGlobals.map[point.x - 4, point.y + 4]}";
-            // s2 += $"{CsGlobals.map[point.x - 3, point.y + 3]}";
-            // s2 += $"{CsGlobals.map[point.x - 2, point.y + 2]}";
-            // s2 += $"{CsGlobals.map[point.x - 1, point.y + 1]}";
-            // s2 += $"{CsGlobals.map[point.x, point.y]}";
-            // s2 += $"{CsGlobals.map[point.x + 1, point.y - 1]}";
-            // s2 += $"{CsGlobals.map[point.x + 2, point.y - 2]}";
-            // s2 += $"{CsGlobals.map[point.x + 3, point.y - 3]}";
-            // s2 += $"{CsGlobals.map[point.x + 4, point.y - 4]}";
-            // s2 += $"{CsGlobals.map[point.x + 5, point.y - 5]}";
-            //
-            // // Horizontal line ––
-            // s3 += $"{CsGlobals.map[point.x - 5, point.y]}";
-            // s3 += $"{CsGlobals.map[point.x - 4, point.y]}";
-            // s3 += $"{CsGlobals.map[point.x - 3, point.y]}";
-            // s3 += $"{CsGlobals.map[point.x - 2, point.y]}";
-            // s3 += $"{CsGlobals.map[point.x - 1, point.y]}";
-            // s3 += $"{CsGlobals.map[point.x, point.y]}";
-            // s3 += $"{CsGlobals.map[point.x + 1, point.y]}";
-            // s3 += $"{CsGlobals.map[point.x + 2, point.y]}";
-            // s3 += $"{CsGlobals.map[point.x + 3, point.y]}";
-            // s3 += $"{CsGlobals.map[point.x + 4, point.y]}";
-            // s3 += $"{CsGlobals.map[point.x + 5, point.y]}";
-            //
-            // // Vertical line |
-            // s4 += $"{CsGlobals.map[point.x, point.y + 5]}";
-            // s4 += $"{CsGlobals.map[point.x, point.y + 4]}";
-            // s4 += $"{CsGlobals.map[point.x, point.y + 3]}";
-            // s4 += $"{CsGlobals.map[point.x, point.y + 2]}";
-            // s4 += $"{CsGlobals.map[point.x, point.y + 1]}";
-            // s4 += $"{CsGlobals.map[point.x, point.y]}";
-            // s4 += $"{CsGlobals.map[point.x, point.y - 1]}";
-            // s4 += $"{CsGlobals.map[point.x, point.y - 2]}";
-            // s4 += $"{CsGlobals.map[point.x, point.y - 3]}";
-            // s4 += $"{CsGlobals.map[point.x, point.y - 4]}";
-            // s4 += $"{CsGlobals.map[point.x, point.y - 5]}";
-        }
-		Debug.Log(winCosts);		
-
-        return winMoves;
-    }
-
-    public List<(int x, int y)> GetPossibleMoves()
+	public List<(int x, int y)> GetPossibleMoves()
     {
-        // Set players moving order
-        SetPlayers(CsGlobals.gamerNumber);
+		List<(int x, int y)> winMoves = new List<(int x, int y)>();
 
-        // Dict with empty position with at least 1 neighbor
-        var fMoves = GetFutureMoves();
-
-        // Calc and set maximum rating for each selected move
-        // and return best of them
-        var winMoves = CalcRating(fMoves);
-
+		var cost = CsGlobals.Costs[CsGlobals.gamerNumber];
+		int winCosts = 0;
+		
+		for (var i = 0; i < CsGlobals.GetXSize(); i++)
+			for (var j = 0; j < CsGlobals.GetYSize(); j++)
+			{
+				if (cost[i, j] == winCosts)
+				{
+					winMoves.Add((i, j));
+				}
+				else if (cost[i, j] > winCosts)
+				{
+					winCosts = cost[i, j];
+					winMoves.Clear();
+					winMoves.Add((i, j));
+				}
+			}
+		
         return winMoves;
     }
 }

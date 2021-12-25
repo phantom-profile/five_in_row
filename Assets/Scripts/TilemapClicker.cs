@@ -102,6 +102,11 @@ public class TilemapClicker : MonoBehaviour
                             return;
                         }
 
+                        AIChooser AI = new AIChooser();
+                        AI.UpdateCosts(clickCellPosition.x - leftBottomTilemapLimit.x,
+                            clickCellPosition.y - leftBottomTilemapLimit.y);
+                        FirstTile = false;
+
                         CsGlobals.gamerNumber++;
                         if (CsGlobals.gamerNumber > 3) CsGlobals.gamerNumber = 1;
                         //if (CsGlobals.gamerNumber < 1) CsGlobals.gamerNumber = 3;
@@ -109,12 +114,24 @@ public class TilemapClicker : MonoBehaviour
                 }
             }
         }
+        else if (FirstTile)
+        {
+            CsGlobals.map[0 - leftBottomTilemapLimit.x,
+                0 - leftBottomTilemapLimit.y] = CsGlobals.gamerNumber;
+
+            AIChooser AI = new AIChooser();
+            AI.UpdateCosts(0 - leftBottomTilemapLimit.x,
+                0 - leftBottomTilemapLimit.y);
+            
+            CsGlobals.gamerNumber++;
+            if (CsGlobals.gamerNumber > 3) CsGlobals.gamerNumber = 1;
+            FirstTile = false;
+
+        }
         else
-        
         {
             //StartCoroutine(waiter());
-            
-            
+
             AIChooser AI = new AIChooser();
             List<(int x, int y)> winMoves = AI.GetPossibleMoves();
         
@@ -155,22 +172,16 @@ public class TilemapClicker : MonoBehaviour
                 return;
             }
 
+            AI.UpdateCosts(clickCellPosition.x - leftBottomTilemapLimit.x,
+                clickCellPosition.y - leftBottomTilemapLimit.y);
+            
             CsGlobals.gamerNumber++;
             if (CsGlobals.gamerNumber > 3) CsGlobals.gamerNumber = 1;
+            FirstTile = false;
+
         }
-        
-    }
-    
-    IEnumerator waiter()
-    {
-        yield return new WaitForSeconds(5);
- 
-        for (int i = 0; i < 1000; i++)
-        {
-            yield return new WaitForSeconds(0.05f);
-            // Move the object upward in world space 1 unit/second.
-            transform.Translate(Vector3.up * Time.deltaTime, Space.World);
-        }
+
+
     }
 
     private static readonly int[,] deltaArray = new int[,] {{-1, 1}, {0, 1}, {1, 1}, {1, 0}};

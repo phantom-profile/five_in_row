@@ -1,5 +1,5 @@
-﻿//using System.Collections;
-//using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 //using UnityEngine;
 
 public static class CsGlobals
@@ -24,6 +24,13 @@ public static class CsGlobals
 	}
 
 	public static byte[,] map = new byte[GetXSize(), GetYSize()];
+	
+	public static Dictionary<byte, int[,]> Costs = new Dictionary<byte, int[,]>
+    {
+    	{1, new int[GetXSize(), GetYSize()]},
+    	{2, new int[GetXSize(), GetYSize()]},
+    	{3, new int[GetXSize(), GetYSize()]},
+    };
 
 	public static bool[] RealPlayers = new bool[] {true, true, true};
 
