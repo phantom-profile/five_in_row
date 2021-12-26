@@ -24,6 +24,7 @@ public static class CsGlobals
 	}
 
 	public static byte[,] map = new byte[GetXSize(), GetYSize()];
+	public static byte[,] winMap = new byte[11, 11];
 	
 	public static Dictionary<byte, int[,]> Costs = new Dictionary<byte, int[,]>
     {

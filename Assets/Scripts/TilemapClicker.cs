@@ -206,6 +206,9 @@ public class TilemapClicker : MonoBehaviour
 
             if (chipsNumberInRow >= 5)
             {
+                for (int i = -5; i <= 5; i++)
+                    for (int k = -5; k <= 5; k++)
+                        CsGlobals.winMap[i + 5, k + 5] = CsGlobals.map[x + i, y + k];
                 return true;
             }
         }

@@ -22,7 +22,7 @@ public class AIChooser
 				"xx0xx", 					"0x0xx0", 					"00xxx0", 
 				"00xxx#", 					"00xx0", 					"0x0x0"*/
 
-    private Dictionary<(Marker, int), int> _costs = new Dictionary<(Marker, int), int>()
+    /*private Dictionary<(Marker, int), int> _costs = new Dictionary<(Marker, int), int>()
     {
         {(Marker.First, 1), 99999},		{(Marker.First, 2), 3000}, 	{(Marker.First, 3), 3000},
         {(Marker.First, 4), 7000}, 		{(Marker.First, 5), 4000}, 	{(Marker.First, 6), 3000},
@@ -38,6 +38,24 @@ public class AIChooser
         {(Marker.Third, 4), 4480}, 		{(Marker.Third, 5), 2560}, 	{(Marker.Third, 6), 1920},
         {(Marker.Third, 7), 1920}, 		{(Marker.Third, 8), 512}, 	{(Marker.Third, 9), 1920},
         {(Marker.Third, 10), 960}, 		{(Marker.Third, 11), 128}, 	{(Marker.Third, 12), 96},
+    };*/
+
+	private Dictionary<(byte, int), int> _costs = new Dictionary<(byte, int), int>()
+    {
+        {(1, 1), 99999},	{(1, 2), 3000}, 	{(1, 3), 3000},
+        {(1, 4), 7000}, 	{(1, 5), 4000}, 	{(1, 6), 3000},
+        {(1, 7), 3000}, 	{(1, 8), 800}, 		{(1, 9), 3000},
+        {(1, 10), 1500}, 	{(1, 11), 200}, 	{(1, 12), 150},
+
+        {(2, 1), 79999}, 	{(2, 2), 2400}, 	{(2, 3), 2400},
+        {(2, 4), 5600}, 	{(2, 5), 3200}, 	{(2, 6), 2400},
+        {(2, 7), 2400}, 	{(2, 8), 640}, 		{(2, 9), 2400},
+        {(2, 10), 1200}, 	{(2, 11), 160}, 	{(2, 12), 120},
+
+        {(3, 1), 63999}, 	{(3, 2), 1920}, 	{(3, 3), 1920},
+        {(3, 4), 4480}, 	{(3, 5), 2560}, 	{(3, 6), 1920},
+        {(3, 7), 1920}, 	{(3, 8), 512}, 		{(3, 9), 1920},
+        {(3, 10), 960}, 	{(3, 11), 128}, 	{(3, 12), 96},
     };
 
 
@@ -169,28 +187,48 @@ public class AIChooser
 		{
 			//Debug.Log("getMaxCost 0");
 			byte deltaNumber = (byte) (patternPlayerNumber - playerNumber);
-			while (deltaNumber < 1 || 3 < deltaNumber)
+			while (deltaNumber < 0 || 2 < deltaNumber)
 			{
-				if (deltaNumber < 1)
+				if (deltaNumber < 0)
 					deltaNumber += 3;
-				if (deltaNumber > 3)
+				if (deltaNumber > 2)
 					deltaNumber -= 3;
 			}
 			//Debug.Log("getMaxCost 1");
 			
 			switch (deltaNumber)
 			{
+				case 0:
+					return _costs[(playerNumber, pattern + 1)];
+					break;
 				case 1:
-					return _costs[(Marker.First, pattern + 1)];
+					switch (playerNumber)
+					{
+						case 1:
+							return (int) (_costs[(playerNumber, pattern + 1)] * 0.8);
+							break;
+						case 2:
+							return (int) (_costs[(playerNumber, pattern + 1)] * 0.8);
+							break;
+						case 3:
+							return (int) (_costs[(playerNumber, pattern + 1)] * 0.8);
+							break;
+					}
 					break;
 				case 2:
-					return _costs[(Marker.Second, pattern + 1)];
+					switch (playerNumber)
+					{
+						case 1:
+							return (int) (_costs[(playerNumber, pattern + 1)] * 0.5);
+							break;
+						case 2:
+							return (int) (_costs[(playerNumber, pattern + 1)] * 0.5);
+							break;
+						case 3:
+							return (int) (_costs[(playerNumber, pattern + 1)] * 0.5);
+							break;
+					}
 					break;
-				case 3:
-					return _costs[(Marker.Third, pattern + 1)];
-					break;
-				default:
-					throw new Exception("Impossible player num (only 3 supported).");
 			}
 
 			return -1;
