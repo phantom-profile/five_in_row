@@ -6,15 +6,16 @@ ScriptsOnlyBuild:
     - TilemapClicker
     - Win
     - WinSprite
+    - WinTilemap
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridBrush
+    - UnityEditor.Tilemaps.GridBrushEditor
     - UnityEditor.Tilemaps.GridPaintPaletteClipboard
     - UnityEditor.Tilemaps.GridPaintPaletteWindow
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
-    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.PaintableSceneViewGrid
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.TileDragAndDropManager
@@ -32,8 +33,6 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
     - UnityEngine.UI.Text
-    com.unity.multiplayer-hlapi.Runtime.dll:
-    - UnityEngine.Networking.NetworkCallbacks
   sceneClasses:
     Assets/Scenes/Menu.unity:
     - Class: 1
@@ -67,7 +66,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 14380}
     - Class: 114
-      Script: {instanceID: 15124}
+      Script: {instanceID: 15126}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -141,6 +140,8 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
+      Script: {instanceID: 638}
+    - Class: 114
       Script: {instanceID: 11290}
     - Class: 114
       Script: {instanceID: 11316}
@@ -157,7 +158,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 14380}
     - Class: 114
-      Script: {instanceID: 15124}
+      Script: {instanceID: 14590}
+    - Class: 114
+      Script: {instanceID: 15126}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -175,6 +178,12 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 156049354
+      Script: {instanceID: 0}
+    - Class: 483693784
+      Script: {instanceID: 0}
+    - Class: 1839735485
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -719,6 +728,12 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
+      Hash: 243e30001a8d9e5e8868bdbcf140990c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: WinTilemap
+  - hash:
+      serializedVersion: 2
       Hash: 1dcb82730d983b77cec736c6ef19f814
     assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
     namespaceName: UnityEngine.Networking
@@ -866,4 +881,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Menu.unity
   - Assets/Scenes/SampleScene.unity
   - Assets/Scenes/Win.unity
-  playerPath: C:/Users/Polina/Unity Projects/five_in_row/EXE_2/five_in_row.exe
+  playerPath: C:/Users/Polina/Unity Projects/five_in_row/EXE_3/five_in_row.exe
