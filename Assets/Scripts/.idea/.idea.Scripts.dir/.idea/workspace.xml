@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55f8e028-adb2-40f4-9bfe-b245adb14d92" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Scenes/Win.unity" beforeDir="false" afterPath="$PROJECT_DIR$/../Scenes/Win.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Scripts.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Scripts.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AIChooser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AIChooser.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CsGlobals.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CsGlobals.cs" afterDir="false" />
@@ -10,19 +11,26 @@
       <change beforePath="$PROJECT_DIR$/../../Library/ArtifactDB" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/ArtifactDB" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/08/08d6355aa62f259ae67e147fa378680b" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/2c/2c280c808873170bec1482f71795581c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/2f/2f1d1204dbd9dd31c6de9db3ff1ab182" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/37/372852ab3e84c9bf47c6935ed667e721" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/43/436733dd9d517261929be40cb1cdc2df" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/4c/4caf429250e936fc8f370659d8903c0b" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/4f/4f5607a0ef4a238bbecbcf6432dc7444" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/5e/5e2c69dcb875274c5cd3aff23c94ef8e" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/b4/b40c9eb434ae0f5918b92b05ed8203ca" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/c3/c395f554066db04ee8aa7fac2c4ef912" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/cf/cfd15c1e96ad01cab1d897a12b3cc123" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/e2/e28894773030b2677d5422be9aeb733e" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/ea/ea54f4f173d08bd0c097c2152f121a30" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/f3/f3fbeac91e507e88067257e5af30081d" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/fc/fc4c84eb7f0a26137d78d99807646631" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Library/CurrentLayout-default.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/CurrentLayout-default.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/LastSceneManagerSetup.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/LastSceneManagerSetup.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Library/ScriptAssemblies/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/ScriptAssemblies/Assembly-CSharp.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Library/ScriptAssemblies/Assembly-CSharp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/ScriptAssemblies/Assembly-CSharp.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Library/SourceAssetDB" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/SourceAssetDB" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/StateCache/Hierarchy/c87438-mainStage.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/StateCache/Hierarchy/c87438-mainStage.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/StateCache/SceneView/5ea6e3-mainStage.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/StateCache/SceneView/5ea6e3-mainStage.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Library/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Library/shadercompiler-UnityShaderCompiler.exe1.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/shadercompiler-UnityShaderCompiler.exe1.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Library/shadercompiler-UnityShaderCompiler.exe2.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/shadercompiler-UnityShaderCompiler.exe2.log" afterDir="false" />
@@ -87,6 +95,7 @@
       <workItem from="1640290034151" duration="252000" />
       <workItem from="1640290650544" duration="276000" />
       <workItem from="1640503660057" duration="3860000" />
+      <workItem from="1640508048938" duration="180000" />
     </task>
     <servers />
   </component>
