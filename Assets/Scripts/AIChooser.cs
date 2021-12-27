@@ -205,13 +205,13 @@ public class AIChooser
 					switch (playerNumber)
 					{
 						case 1:
-							return (int) (_costs[(playerNumber, pattern + 1)] * 0.8);
+							return (int) (_costs[(playerNumber, pattern + 1)] * 1.1);
 							break;
 						case 2:
 							return (int) (_costs[(playerNumber, pattern + 1)] * 0.8);
 							break;
 						case 3:
-							return (int) (_costs[(playerNumber, pattern + 1)] * 0.8);
+							return (int) (_costs[(playerNumber, pattern + 1)] * 0.3);
 							break;
 					}
 					break;
@@ -219,13 +219,13 @@ public class AIChooser
 					switch (playerNumber)
 					{
 						case 1:
-							return (int) (_costs[(playerNumber, pattern + 1)] * 0.5);
+							return (int) (_costs[(playerNumber, pattern + 1)] * 0.8);
 							break;
 						case 2:
 							return (int) (_costs[(playerNumber, pattern + 1)] * 0.5);
 							break;
 						case 3:
-							return (int) (_costs[(playerNumber, pattern + 1)] * 0.5);
+							return (int) (_costs[(playerNumber, pattern + 1)] * 0.3);
 							break;
 					}
 					break;

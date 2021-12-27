@@ -2,38 +2,56 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55f8e028-adb2-40f4-9bfe-b245adb14d92" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../Scenes/Win.unity" beforeDir="false" afterPath="$PROJECT_DIR$/../Scenes/Win.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Scripts.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Scripts.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AIChooser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/AIChooser.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CsGlobals.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CsGlobals.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TilemapClicker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TilemapClicker.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Win.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Win.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EXE_3/five_in_row_Data/Managed/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../EXE_3/five_in_row_Data/Managed/Assembly-CSharp.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EXE_3/five_in_row_Data/Managed/Unity.2D.Animation.Runtime.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../EXE_3/five_in_row_Data/Managed/Unity.2D.Animation.Runtime.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EXE_3/five_in_row_Data/Managed/Unity.2D.Animation.Triangle.Runtime.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../EXE_3/five_in_row_Data/Managed/Unity.2D.Animation.Triangle.Runtime.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EXE_3/five_in_row_Data/Managed/Unity.2D.Common.Runtime.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../EXE_3/five_in_row_Data/Managed/Unity.2D.Common.Runtime.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EXE_3/five_in_row_Data/Managed/Unity.2D.PixelPerfect.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../EXE_3/five_in_row_Data/Managed/Unity.2D.PixelPerfect.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EXE_3/five_in_row_Data/Managed/Unity.2D.SpriteShape.Runtime.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../EXE_3/five_in_row_Data/Managed/Unity.2D.SpriteShape.Runtime.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EXE_3/five_in_row_Data/Managed/Unity.Analytics.DataPrivacy.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../EXE_3/five_in_row_Data/Managed/Unity.Analytics.DataPrivacy.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EXE_3/five_in_row_Data/Managed/Unity.InternalAPIEngineBridge.001.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../EXE_3/five_in_row_Data/Managed/Unity.InternalAPIEngineBridge.001.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EXE_3/five_in_row_Data/Managed/Unity.Mathematics.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../EXE_3/five_in_row_Data/Managed/Unity.Mathematics.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EXE_3/five_in_row_Data/Managed/Unity.TextMeshPro.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../EXE_3/five_in_row_Data/Managed/Unity.TextMeshPro.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EXE_3/five_in_row_Data/Managed/Unity.Timeline.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../EXE_3/five_in_row_Data/Managed/Unity.Timeline.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EXE_3/five_in_row_Data/Managed/UnityEngine.Advertisements.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../EXE_3/five_in_row_Data/Managed/UnityEngine.Advertisements.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EXE_3/five_in_row_Data/Managed/UnityEngine.Monetization.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../EXE_3/five_in_row_Data/Managed/UnityEngine.Monetization.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EXE_3/five_in_row_Data/Managed/UnityEngine.Purchasing.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../EXE_3/five_in_row_Data/Managed/UnityEngine.Purchasing.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EXE_3/five_in_row_Data/Managed/UnityEngine.SpatialTracking.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../EXE_3/five_in_row_Data/Managed/UnityEngine.SpatialTracking.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EXE_3/five_in_row_Data/Managed/UnityEngine.UI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../EXE_3/five_in_row_Data/Managed/UnityEngine.UI.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EXE_3/five_in_row_Data/Managed/UnityEngine.XR.LegacyInputHelpers.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../EXE_3/five_in_row_Data/Managed/UnityEngine.XR.LegacyInputHelpers.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EXE_3/five_in_row_Data/Managed/com.unity.multiplayer-hlapi.Runtime.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../EXE_3/five_in_row_Data/Managed/com.unity.multiplayer-hlapi.Runtime.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EXE_3/five_in_row_Data/globalgamemanagers" beforeDir="false" afterPath="$PROJECT_DIR$/../../EXE_3/five_in_row_Data/globalgamemanagers" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../EXE_3/five_in_row_Data/sharedassets0.assets" beforeDir="false" afterPath="$PROJECT_DIR$/../../EXE_3/five_in_row_Data/sharedassets0.assets" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Library/ArtifactDB" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/ArtifactDB" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/08/08d6355aa62f259ae67e147fa378680b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/2c/2c280c808873170bec1482f71795581c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/2f/2f1d1204dbd9dd31c6de9db3ff1ab182" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/37/372852ab3e84c9bf47c6935ed667e721" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/43/436733dd9d517261929be40cb1cdc2df" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/4c/4caf429250e936fc8f370659d8903c0b" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/4f/4f5607a0ef4a238bbecbcf6432dc7444" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/5e/5e2c69dcb875274c5cd3aff23c94ef8e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/b4/b40c9eb434ae0f5918b92b05ed8203ca" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/c3/c395f554066db04ee8aa7fac2c4ef912" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/cf/cfd15c1e96ad01cab1d897a12b3cc123" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/e2/e28894773030b2677d5422be9aeb733e" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/ea/ea54f4f173d08bd0c097c2152f121a30" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/f3/f3fbeac91e507e88067257e5af30081d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/Artifacts/fc/fc4c84eb7f0a26137d78d99807646631" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Library/CurrentLayout-default.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/CurrentLayout-default.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/LastBuild.buildreport" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/LastBuild.buildreport" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Library/LastSceneManagerSetup.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/LastSceneManagerSetup.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/PlayerDataCache/Win/Data/Managed/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/PlayerDataCache/Win/Data/Managed/Assembly-CSharp.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/PlayerDataCache/Win/Data/Managed/Unity.2D.Animation.Runtime.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/PlayerDataCache/Win/Data/Managed/Unity.2D.Animation.Runtime.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/PlayerDataCache/Win/Data/Managed/Unity.2D.Animation.Triangle.Runtime.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/PlayerDataCache/Win/Data/Managed/Unity.2D.Animation.Triangle.Runtime.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/PlayerDataCache/Win/Data/Managed/Unity.2D.Common.Runtime.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/PlayerDataCache/Win/Data/Managed/Unity.2D.Common.Runtime.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/PlayerDataCache/Win/Data/Managed/Unity.2D.PixelPerfect.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/PlayerDataCache/Win/Data/Managed/Unity.2D.PixelPerfect.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/PlayerDataCache/Win/Data/Managed/Unity.2D.SpriteShape.Runtime.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/PlayerDataCache/Win/Data/Managed/Unity.2D.SpriteShape.Runtime.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/PlayerDataCache/Win/Data/Managed/Unity.Analytics.DataPrivacy.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/PlayerDataCache/Win/Data/Managed/Unity.Analytics.DataPrivacy.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/PlayerDataCache/Win/Data/Managed/Unity.InternalAPIEngineBridge.001.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/PlayerDataCache/Win/Data/Managed/Unity.InternalAPIEngineBridge.001.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/PlayerDataCache/Win/Data/Managed/Unity.Mathematics.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/PlayerDataCache/Win/Data/Managed/Unity.Mathematics.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/PlayerDataCache/Win/Data/Managed/Unity.TextMeshPro.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/PlayerDataCache/Win/Data/Managed/Unity.TextMeshPro.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/PlayerDataCache/Win/Data/Managed/Unity.Timeline.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/PlayerDataCache/Win/Data/Managed/Unity.Timeline.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/PlayerDataCache/Win/Data/Managed/UnityEngine.Advertisements.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/PlayerDataCache/Win/Data/Managed/UnityEngine.Advertisements.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/PlayerDataCache/Win/Data/Managed/UnityEngine.Monetization.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/PlayerDataCache/Win/Data/Managed/UnityEngine.Monetization.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/PlayerDataCache/Win/Data/Managed/UnityEngine.Purchasing.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/PlayerDataCache/Win/Data/Managed/UnityEngine.Purchasing.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/PlayerDataCache/Win/Data/Managed/UnityEngine.SpatialTracking.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/PlayerDataCache/Win/Data/Managed/UnityEngine.SpatialTracking.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/PlayerDataCache/Win/Data/Managed/UnityEngine.UI.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/PlayerDataCache/Win/Data/Managed/UnityEngine.UI.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/PlayerDataCache/Win/Data/Managed/UnityEngine.XR.LegacyInputHelpers.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/PlayerDataCache/Win/Data/Managed/UnityEngine.XR.LegacyInputHelpers.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/PlayerDataCache/Win/Data/Managed/com.unity.multiplayer-hlapi.Runtime.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/PlayerDataCache/Win/Data/Managed/com.unity.multiplayer-hlapi.Runtime.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/PlayerDataCache/Win/Data/globalgamemanagers" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/PlayerDataCache/Win/Data/globalgamemanagers" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/PlayerDataCache/Win/Data/sharedassets0.assets" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/PlayerDataCache/Win/Data/sharedassets0.assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Library/PlayerDataCache/Win/ScriptsOnlyCache.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/PlayerDataCache/Win/ScriptsOnlyCache.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Library/ScriptAssemblies/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/ScriptAssemblies/Assembly-CSharp.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Library/ScriptAssemblies/Assembly-CSharp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/ScriptAssemblies/Assembly-CSharp.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Library/SourceAssetDB" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/SourceAssetDB" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/StateCache/Hierarchy/c87438-mainStage.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/StateCache/Hierarchy/c87438-mainStage.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/StateCache/SceneView/5ea6e3-mainStage.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/StateCache/SceneView/5ea6e3-mainStage.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/shadercompiler-UnityShaderCompiler.exe1.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/shadercompiler-UnityShaderCompiler.exe1.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Library/shadercompiler-UnityShaderCompiler.exe2.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../Library/shadercompiler-UnityShaderCompiler.exe2.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,10 +71,10 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/CameraControl.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/WinSprite.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WinSprite.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WinTilemap.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/TilemapClicker.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Win.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/TilemapClicker.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Win.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/Downloads/AIChoser.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CsGlobals.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -96,6 +114,8 @@
       <workItem from="1640290650544" duration="276000" />
       <workItem from="1640503660057" duration="3860000" />
       <workItem from="1640508048938" duration="180000" />
+      <workItem from="1640589213889" duration="627000" />
+      <workItem from="1640608358353" duration="1406000" />
     </task>
     <servers />
   </component>
